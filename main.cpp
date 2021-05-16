@@ -29,7 +29,7 @@ int VatCalculator();
 
 // a global variable
 int numOfMenuItems;
-
+int davesno;
 
 int main(){
 	int i=0;
