@@ -32,7 +32,6 @@ int numOfMenuItems;
 int davesno;
 
 int main(){
-	int i=0;
 	string again;
 	
 	
@@ -40,6 +39,7 @@ int main(){
 	cout<<"                          Welcome To Our Customer-Ordering-System..."<<endl;
 	cout<<" "<<endl;
 	cout<<"	You Can Make Three Separate Orders, And One Order Can Have Five Items"<<endl;
+	int i=0;
 	do{
 	    int item;
 	    showMenuList();
