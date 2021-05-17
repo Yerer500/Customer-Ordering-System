@@ -43,11 +43,12 @@ int main(){
 	do{
 	    int item;
 	    showMenuList();
+	    cout<<" "<<endl;
 		cout<<"Order Number "<<i+1<<endl;
 		cout<<"	Write Your Name, For Your Order "<<endl;
 		cin>>userX[0].orderedBy;
 		cout<<" "<<endl;
-		cout<<"You Can Make Your Order By Choosing Item Number  Eg. 01/1 for Beyaynet "<<endl;
+		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 for Beyaynet "<<endl;
 		for(int j=0;j<5;j++){
 			cout<<"Your Number "<<j+1<<" Item Is:"<<endl;
 			while(!(cin>>item && item>=1 && item<=10)){
@@ -60,8 +61,12 @@ int main(){
 		
 		if(i<2){
 		    cout<<" "<<endl;
-			cout<<"Do You Want Too Order Your Next Order Again (Use Y/y For \"Yes\" and Use N/n for \"No\")"<<endl;
+			cout<<"Do You Want To Continue Ordering? (Use Y/y For \"Yes\" and Use N/n for \"No\")"<<endl;
 			cin>>again;
+			if(again!="Y"||again!="y"){
+			    cout<<" "<<endl;
+			    cout<<"Thank You For Order          ..........Bye"<<endl;
+			}
 		}else{
 			  cout<<" "<<endl;
 			  cout<<"		You Can't Not Order More Than 3 Orders"<<endl;
@@ -71,7 +76,9 @@ int main(){
 		i++;
 	}while(again=="Y" || again=="y");
 	
-	
+	if(again=="n" && i<=2){
+		cout<<"Thank You For Order          ..........Bye"<<endl;
+	}
 	
 	return 0;
 }
