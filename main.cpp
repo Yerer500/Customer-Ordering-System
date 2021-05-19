@@ -21,10 +21,14 @@ struct Order{
 	    Menu menuItems[5];
 }userX[3];
 
+//userX[orderNo].menuItems[itemNo] = menuX[resuItem];
+
 // prototyping a function
 void initialize();
 void showMenuList();
 int VatCalculator();
+void copyInfo(int, int, int);
+void showOrderInfo(int);
 
 
 // a global variable
@@ -33,7 +37,6 @@ int davesno;
 
 int main(){
 	string again;
-	
 	
 	
 	cout<<"                          Welcome To Our Customer-Ordering-System..."<<endl;
@@ -46,7 +49,7 @@ int main(){
 	    cout<<" "<<endl;
 		cout<<"Order Number "<<i+1<<endl;
 		cout<<"	Write Your Name, For Your Order "<<endl;
-		cin>>userX[0].orderedBy;
+		cin>>userX[i].orderedBy;
 		cout<<" "<<endl;
 		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 for Beyaynet "<<endl;
 		for(int j=0;j<5;j++){
@@ -57,11 +60,16 @@ int main(){
 				cin.clear();
 				cin.ignore(100, '\n');
 			}
+			copyInfo(i,j,item-1);
+			
+//			userX[orderNo].menuItems[itemNo] = menuX[resuItem];
 		}
+		cout<<" "<<endl;
+		showOrderInfo(i);
 		
 		if(i<2){
 		    cout<<" "<<endl;
-			cout<<"Do You Want To Continue Ordering? (Use Y/y For \"Yes\" and Use N/n for \"No\")"<<endl;
+			cout<<"	Do You Want To Continue Ordering? (Use Y/y For \"Yes\" and Use N/n for \"No\")"<<endl;
 			cin>>again;
 			if(again!="Y"||again!="y"){
 			    cout<<" "<<endl;
@@ -77,15 +85,24 @@ int main(){
 	}while(again=="Y" || again=="y");
 	
 	if(again=="n" && i<=2){
-		cout<<"Thank You For Order          ..........Bye"<<endl;
+		cout<<"Thank You For Order.............Bye"<<endl;
 	}
 	
 	return 0;
 }
 
+// copy Info of the user that they Entered
+void copyInfo(int orderNo, int itemNo, int resuItem){
+	 userX[orderNo].menuItems[itemNo] = menuX[resuItem];
+}
+
+void showOrderInfo(int i){
+	cout<<userX[i].orderedBy<<endl;
+	cout<<" Item 1 : Name ------------------ "<<userX[i].menuItems[0].menuName<<endl;
+}
+
 // a function to calulate the total amount of the food price including VAT %
-int VatCalculator()
-{
+int VatCalculator(){
 	for(int index = 0; index <5; index++)
 	{	
 		float Vat = 115.0;
@@ -102,7 +119,6 @@ int VatCalculator()
 		
 	}
 }
-
 
 
 void showMenuList (){
@@ -127,7 +143,6 @@ void showMenuList (){
 	readFile.close();
 	
 }
-
 
 
 void initialize(){
