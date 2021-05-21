@@ -101,12 +101,14 @@ void copyInfo(int orderNo, int itemNo, int resuItem){
 void showOrderInfo(int i){
 	cout<<userX[i].orderedBy<<endl;
 	for(int z = 0; z<5;z++){
-		cout<<" Item "<<z<<"  : Name ------------------ "<<userX[i].menuItems[z].menuName<<" Price ----"<<userX[i].menuItems[z].itemPrice<<endl;
+		cout<<" Item "<<z+1<<"  : Name ------------------ "<<userX[i].menuItems[z].menuName<<endl;
+		cout<<"           Price ----------------- "<<userX[i].menuItems[z].itemPrice<<endl;
+		cout<<"           Preparation-Time ------ "<<userX[i].menuItems[z].preparationTime<<endl;
 	}
 }
 
 
-// a function to calulate the total amount of the food price including VAT %
+// a function to calculate the total amount of the food price including VAT %
 int VatCalculator(){
 	int newPrice;
 	for(int index = 0; index <5; index++)
@@ -119,9 +121,6 @@ int VatCalculator(){
 		
 		int totalVat = itemVat * (100 - Vat);
 		
-		 newPrice = menuX[index].itemPrice + totalVat;
-		
-	
 		
 	}
 		return(newPrice);
