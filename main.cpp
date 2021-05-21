@@ -37,6 +37,7 @@ int numOfMenuItems;
 int davesno;
 
 int main(){
+	initialize();
 	string again;
 	
 	
@@ -109,6 +110,7 @@ cout<<" Item "<<z<<"  : Name ------------------ "<<userX[i].menuItems[z].menuNam
 
 // a function to calulate the total amount of the food price including VAT %
 int VatCalculator(){
+	int newPrice;
 	for(int index = 0; index <5; index++)
 	{	
 		float Vat = 115.0;
@@ -119,11 +121,12 @@ int VatCalculator(){
 		
 		int totalVat = itemVat * (100 - Vat);
 		
-		int newPrice = menuX[index].itemPrice + totalVat;
+		 newPrice = menuX[index].itemPrice + totalVat;
 		
-		return(newPrice);
+	
 		
 	}
+		return(newPrice);
 }
 
 
