@@ -21,6 +21,7 @@ struct Order{
 	    Menu menuItems[5];
 }userX[3];
 
+
 //userX[orderNo].menuItems[itemNo] = menuX[resuItem];
 
 // prototyping a function
@@ -98,7 +99,12 @@ void copyInfo(int orderNo, int itemNo, int resuItem){
 
 void showOrderInfo(int i){
 	cout<<userX[i].orderedBy<<endl;
-	cout<<" Item 1 : Name ------------------ "<<userX[i].menuItems[0].menuName<<endl;
+	for(int z = 0; z<5;z++){
+cout<<" Item "<<z<<"  : Name ------------------ "<<userX[i].menuItems[z].menuName<<" Price ----"<<userX[i].menuItems[z].itemPrice<<endl;
+
+
+	}
+	
 }
 
 // a function to calulate the total amount of the food price including VAT %
