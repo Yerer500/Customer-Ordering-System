@@ -53,7 +53,6 @@ int main(){
 		cout<<"	Write Your Name, For Your Order "<<endl;
 		cin>>userX[i].orderedBy;
 		cout<<" "<<endl;
-		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 for Beyaynet "<<endl;
 		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 ---- Beyaynet "<<endl;
 		for(int j=0;j<5;j++){
 			cout<<"Your Number "<<j+1<<" Item Is:"<<endl;
