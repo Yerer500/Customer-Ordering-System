@@ -54,6 +54,7 @@ int main(){
 		cin>>userX[i].orderedBy;
 		cout<<" "<<endl;
 		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 for Beyaynet "<<endl;
+		cout<<"	You Can Order By Choosing Item Number  Eg. 01/1 ---- Beyaynet "<<endl;
 		for(int j=0;j<5;j++){
 			cout<<"Your Number "<<j+1<<" Item Is:"<<endl;
 			while(!(cin>>item && item>=1 && item<=10)){
@@ -67,16 +68,13 @@ int main(){
 //			userX[orderNo].menuItems[itemNo] = menuX[resuItem];
 		}
 		cout<<" "<<endl;
-		showOrderInfo(i);
+		showOrderInfo(i);		
+		VatCalculator();
 		
 		if(i<2){
 		    cout<<" "<<endl;
 			cout<<"	Do You Want To Continue Ordering? (Use Y/y For \"Yes\" and Use N/n for \"No\")"<<endl;
 			cin>>again;
-			if(again!="Y"||again!="y"){
-			    cout<<" "<<endl;
-			    cout<<"Thank You For Order          ..........Bye"<<endl;
-			}
 		}else{
 			  cout<<" "<<endl;
 			  cout<<"		You Can't Not Order More Than 3 Orders"<<endl;
@@ -87,6 +85,7 @@ int main(){
 	}while(again=="Y" || again=="y");
 	
 	if(again=="n" && i<=2){
+		cout<<""<<endl;
 		cout<<"Thank You For Order.............Bye"<<endl;
 	}
 	
@@ -123,6 +122,7 @@ int VatCalculator(){
 		
 		
 	}
+	cout<<" Vat is: "<<newPrice<<endl;
 		return(newPrice);
 }
 
